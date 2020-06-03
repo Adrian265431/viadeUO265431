@@ -2,40 +2,56 @@
 [![codecov](https://codecov.io/gh/Arquisoft/viade_0/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/viade_0)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6d87ad7b8b89409aa9dc2d7a7492affc)](https://www.codacy.com/gh/Arquisoft/viade_0?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/viade_0&amp;utm_campaign=Badge_Grade)
 
-# VIADE 0
+[![Build Status](https://travis-ci.org/Arquisoft/viadeUO265431.svg?branch=master)](https://travis-ci.org/Arquisoft/viade_es4a)
+[![codecov](https://codecov.io/gh/Arquisoft/viade_es4a/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/viadeUO265431)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2ab2a9322b4040d386f7cc5ad090b375)](https://www.codacy.com/gh/Arquisoft/viadeUO265431?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/viade_es4a&amp;utm_campaign=Badge_Grade)
 
-This repository contains a skeleton of the VIADE project.
+# VIADEUO265431
 
-This project is an assignment for the [Software Architecture course](https://arquisoft.github.io/) following [these requirements](https://labra.solid.community/public/SoftwareArchitecture/AssignmentDescription/).
+This project shows how to create a new react webapp and configure it using travis in order to enable continuous integration for students of Oviedo's University.
 
-The app is deployed at [https://arquisoft.github.io/viade_0/](https://arquisoft.github.io/viade_0/) which also contains a [technical documentation](https://arquisoft.github.io/viade_0/docs).
+## Contributors
+*   Adrián Díaz Moro.
 
-More information about how this project has been setup is available [in the wiki](https://github.com/Arquisoft/viade_0/wiki).
+## Requirements
+*   Node js : You’ll need to have Node 8.16.0 or Node 10.16.0 or later version on your local development machine.
+*   Ruby.
+*   AsciiDoctor : You’ll need to have asciiDoctor and asciiDoctor-diagrams.
 
-
-## Building and running the web app locally
-
-You’ll need to have [Node](https://nodejs.org/) 8.16.0 or Node 10.16.0 or later version on your local development machine.
-
-Run:
-
+```sh
+sudo apt-get update
+sudo apt-get -y install ruby nodejs
+sudo gem install asciidoctor asciidoctor-diagram
+sudo apt-get -y install graphviz 
 ```
+
+## Run project
+
+```sh
+npm install
 npm start
 ```
 
-## Building the docs locally
+If you have installed yet, you don't need npm install, you can use npm update for actualize the dependencies.
 
-In order to create the docs you'll need [asciidoctor](https://asciidoctor.org/) and in case you use [plantuml](https://plantuml.com/) drawings, you'll also need [openjdk 8](https://openjdk.java.net/).
+Or, you can entry in this web <https://arquisoft.github.io/viadeUO265431/> and you can work with our app.
 
-In Linux, they can be installed as:
+## Build documentation
 
-```
-apt-get install ruby openjdk-8-jre
-gem install asciidoctor asciidoctor-diagram
-```
-
-Once they have been installed, the docs can be generated with:
-
-```
+```sh
+Node and Ruby are required. 
+npm install
+gem install asciidoctor
+gem install asciidoctor-diagram 
 npm run docs
+```
+
+You can view the documentation in this web: <https://arquisoft.github.io/viadeUO265431/docs/index.html>.
+
+## Run test
+
+```sh
+Chi is required. 
+npm i chi 
+npm test:e2e
 ```
