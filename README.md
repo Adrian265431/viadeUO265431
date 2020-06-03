@@ -1,10 +1,6 @@
-[![Build Status](https://travis-ci.org/Arquisoft/viade_0.svg?branch=master)](https://travis-ci.org/Arquisoft/viade_0)
-[![codecov](https://codecov.io/gh/Arquisoft/viade_0/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/viade_0)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6d87ad7b8b89409aa9dc2d7a7492affc)](https://www.codacy.com/gh/Arquisoft/viade_0?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/viade_0&amp;utm_campaign=Badge_Grade)
-
-[![Build Status](https://travis-ci.org/Arquisoft/viadeUO265431.svg?branch=master)](https://travis-ci.org/Arquisoft/viade_es4a)
-[![codecov](https://codecov.io/gh/Arquisoft/viade_es4a/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/viadeUO265431)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2ab2a9322b4040d386f7cc5ad090b375)](https://www.codacy.com/gh/Arquisoft/viadeUO265431?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/viade_es4a&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/Arquisoft/viadeUO265431.svg?branch=master)](https://travis-ci.org/Arquisoft/viadeUO265431)
+[![codecov](https://codecov.io/gh/Arquisoft/viadeUO265431/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/viadeUO265431)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2ab2a9322b4040d386f7cc5ad090b375)](https://www.codacy.com/gh/Arquisoft/viadeUO265431?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/viadeUO265431&amp;utm_campaign=Badge_Grade)
 
 # VIADEUO265431
 
