@@ -1,26 +1,36 @@
 [[section-design-decisions]]
-== Design Decisions
+== Decisiones de diseño
+=== Greenfield vs Legacy
+==== Problema
+Se plantea el problema del desarrollo de una aplicación descentralizada para el manejo de rutas con tecnologías bastante novedosas y la duda de si se podría reutilizar un esqueleto provisto por los creadores de SOLID.
+
+==== Alternativas
+La primera alternativa es el escenario Greenfield, en el que se tendría que construir la aplicación desde cero. El segundo escenario es adoptar este esqueleto y adaptarnos a sus restricciones
+
+==== Decisión
+Se opta por el escenario Legacy, en el que incluiremos este esqueleto en nuestra aplicación y nos moldearemos a su estructura.
 
 
-[role="arc42help"]
-****
-.Contents
-Important, expensive, large scale or risky architecture decisions including rationals.
-With "decisions" we mean selecting one alternative based on given criteria.
+=== Uso de react-google-maps
 
-Please use your judgement to decide whether an architectural decision should be documented
-here in this central section or whether you better document it locally
-(e.g. within the white box template of one building block).
+==== Problema
+Para la representación de rutas en el mapa, se necesita una librería, compatible con React, que permita la actualización dinámica del mapa, así como el uso de marcadores y líneas. 
 
-Avoid redundancy. Refer to section 4, where you already captured the most important decisions of your architecture.
+==== Alternativas
+Se barajaron dos librerías, react-google-maps y google-maps-react. La primera es un wrapper de la segunda, que simplifica algunos procesos que son muy repetitivos, como la creación de un mapa simple o la incrustación de marcadores. La segunda es la librería oficial de Google, que cuenta con una amplia documentación y está actualizada al día.
 
-.Motivation
-Stakeholders of your system should be able to comprehend and retrace your decisions.
+==== Decisión
+Se decide el uso de react-google-maps por simplificar mucho el proceso de creación. Se suplirá la falta de documentación con horas de investigación, pero se concluye que compensará.
 
-.Form
-Various options:
+=== Usar rdflib/LDFlex
+==== Problema
+Se tiene que usar algún tipo de tecnología para manejar la parte de Linked Data de SOLID y la lectura y escritura en PODS.
 
-* List or table, ordered by importance and consequences or:
-* more detailed in form of separate sections per decision
-* ADR (architecture decision record) for every important decision
-****
+==== Alternativas
+Para el manejo de Linked Data hay (hasta dónde se sabe) una sola librería bien documentada en JavaScript, y es rdflib. Para la escritura y lectura en PODS hay varias alternativas, pero se ha desarrollado una específica que funciona bien con SOLID y es LDFlex.
+
+==== Solución
+Se usarán estas dos librerías que parecen ser estándar a la hora de trabajar con SOLID/Linked Data. Se aprenderán ambos frameworks.
+
+
+
