@@ -42,7 +42,7 @@ gem install asciidoctor-diagram
 npm run docs
 ```
 
-You can view the documentation in this web: <https://adrian265431.github.io/viadeUO265431/docs/index.html>.
+You can view the documentation in this web: <https://adrian265431.github.io/viadeUO265431/docs/>.
 
 ## Run test
 
