@@ -39,12 +39,12 @@ const Footer = (props: Props) => {
             </li>
             <li>
               <a
-                href="https://github.com/Arquisoft/viade_es4a"
+                href="https://github.com/Adrian265431/viadeUO265431"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon className="link-icon" icon={githubIconDef} />
-                Viade_es4a
+                ViadeUO265431
               </a>
             </li>
             <li>

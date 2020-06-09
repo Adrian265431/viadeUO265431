@@ -90,11 +90,6 @@ export const WelcomePageContent = props => {
           </Trans>
            <ul>
 			<li>Adrián Díaz Moro</li>
-			<li>Aique Montes Mastre</li>
-			<li>Antonio Fernández Flambó</li>
-			<li>Israel Méndez Rodríguez</li>
-			<li>Pelayo Rodríguez García</li>
-			<li>Raúl García Arenas</li>
 			</ul>
 
         </WelcomeDetail>
