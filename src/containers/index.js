@@ -11,6 +11,8 @@ import UploadRoute from './UploadRoute';
 import Friends from "./Friends";
 import RoutList from "./RoutList";
 import RoutesUser from "./RoutesUser";
+import MyRoutes from "./MyRoutes";
+import NewRoute from "./NewRoute";
 
 export {
   Login,
@@ -27,6 +29,8 @@ export {
   UploadRoute,
   Friends,
   RoutList,
-  RoutesUser
+  RoutesUser,
+MyRoutes,
+NewRoute
 
 };

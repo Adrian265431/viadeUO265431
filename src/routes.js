@@ -16,7 +16,9 @@ import {
   viewRoute,
   UploadRoute,
   Friends,
-  RoutList
+  RoutList,
+  MyRoutes,
+  NewRoute
 } from './containers';
 
 const privateRoutes = [
@@ -55,6 +57,11 @@ const privateRoutes = [
     path: '/viadeUO265431/addRoute',
     component: addRoute
   },
+   {
+    id: 'newRoute',
+    path: '/viadeUO265431/newRoute',
+    component: NewRoute
+  },
   {
     id: 'viewRoute',
     path: '/viadeUO265431/viewRoute',
@@ -69,6 +76,11 @@ const privateRoutes = [
     id: 'friends',
     path: '/viadeUO265431/friends',
     component: Friends
+  },
+  {
+    id: 'myRoutes',
+    path: '/viadeUO265431/myRoutes',
+    component: MyRoutes
   },
   {
     id: 'routList',

@@ -22,7 +22,12 @@ export const NavigationItems = [
     label:'navBar.addRoute',
     to: '/viadeUO265431/addRoute'
   },
-
+  {
+    id:'newRoute',
+    icon:'img/icon/addRoute.png',
+    label:'navBar.addRoute',
+    to: '/viadeUO265431/newRoute'
+  },
   {
     id:'uploadRoute',
     icon:'img/icon/uploadRoute.png',
@@ -46,8 +51,14 @@ export const NavigationItems = [
     icon:'img/icon/listRoute.png',
     label:'navBar.routList',
     to:'/viadeUO265431/routList'
-  }
-,
+  },
+  {
+    id:'myRoutes',
+    icon:'img/icon/listRoute.png',
+    label:'navBar.routList',
+    to:'/viadeUO265431/myRoutes'
+  },
+
   {
     id:'mapa',
     icon:'img/icon/mapa.png',
