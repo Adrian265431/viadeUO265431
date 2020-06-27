@@ -12,11 +12,9 @@ import {
   Profile,
   FormModelConverter,
   FormModelRenderer,
-  addRoute,
-  viewRoute,
+  AddRoute,
   UploadRoute,
   Friends,
-  RoutList,
   MyRoutes,
   NewRoute
 } from './containers';
@@ -55,23 +53,18 @@ const privateRoutes = [
   {
     id: 'addRoute',
     path: '/viadeUO265431/addRoute',
-    component: addRoute
+    component: AddRoute
   },
    {
     id: 'newRoute',
     path: '/viadeUO265431/newRoute',
     component: NewRoute
   },
-  {
-    id: 'viewRoute',
-    path: '/viadeUO265431/viewRoute',
-    component: viewRoute
-  },
-  {
-    id: 'uploadRoute',
-    path: '/viadeUO265431/uploadRoute',
-    component: UploadRoute
-  },
+  //{
+   // id: 'uploadRoute',
+   // path: '/viadeUO265431/uploadRoute',
+   // component: UploadRoute
+ //},
   {
     id: 'friends',
     path: '/viadeUO265431/friends',
@@ -81,13 +74,7 @@ const privateRoutes = [
     id: 'myRoutes',
     path: '/viadeUO265431/myRoutes',
     component: MyRoutes
-  },
-  {
-    id: 'routList',
-    path: '/viadeUO265431/routList',
-    component: RoutList
   }
-
 ];
 
 const Routes = () => (

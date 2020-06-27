@@ -6,6 +6,11 @@
       "href": "https://solidsdk.inrupt.net/public/general/en/app-permissions.html"
     }
   },
+  "routList": {
+    "routList.tittle": "Routes of the user",
+	"routList.noRoutes": "Actually you don´t have any saved routes.",
+	
+  },
   "notifications": {
     "success": "Success",
     "error": "Error",

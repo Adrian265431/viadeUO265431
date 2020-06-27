@@ -11,7 +11,7 @@ const N3 = require("n3");
 
 export const createRouteFromData = async (folder) => {
 	let routes = [];
-	while (routes.length < folder.length-1) {
+	while (routes.length < folder.length) {
 		routes = [];
 		for (const element of folder) {
 			let quadStream = await fc.readFile(element.url);

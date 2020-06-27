@@ -136,7 +136,6 @@ export const addRoute = async (webId, route) => {
 
 		const viadeUrl = await getAppStorage(webId, routePath);
 		var fecha=new Date().getTime();
-		//const fecha=""+date.getYear()+date.getMonth()+date.getDay()+date.getHours()+date.getMinutes()+date.getSeconds();
 		const routeFilePath = `${viadeUrl}` + fecha +`.ttl`;
 		const body = createRoute(routeFilePath, route, routeShape);
 

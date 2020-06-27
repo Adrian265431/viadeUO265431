@@ -5,12 +5,9 @@ import Welcome from './Welcome';
 import Profile from './Profile';
 import MyMapComponent from './Mapa';
 import { FormModelConverter, FormModelRenderer } from './FormModel';
-import addRoute from './addRoute';
-import viewRoute from './viewRoute';
-import UploadRoute from './UploadRoute';
+import AddRoute from './AddRoute';
+//import UploadRoute from './UploadRoute';
 import Friends from "./Friends";
-import RoutList from "./RoutList";
-import RoutesUser from "./RoutesUser";
 import MyRoutes from "./MyRoutes";
 import NewRoute from "./NewRoute";
 
@@ -24,13 +21,10 @@ export {
   MyMapComponent,  
   FormModelConverter,
   FormModelRenderer,  
-  addRoute,
-  viewRoute,
-  UploadRoute,
+  AddRoute,
+  //UploadRoute,
   Friends,
-  RoutList,
-  RoutesUser,
-MyRoutes,
-NewRoute
+  MyRoutes,
+  NewRoute
 
 };

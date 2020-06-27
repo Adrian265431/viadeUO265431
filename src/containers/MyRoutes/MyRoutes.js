@@ -87,9 +87,10 @@ class MyRoute extends React.Component {
 									placeholder="Busqueda por categoria..."
 								/>
 								<FontAwesomeIcon icon="search" className="search-icon" id="searchIcon" />
+								
 								<div className="d-flex flex-row py-4 align-items-center" id="pagination">
 									<Pagination
-										totalRecords={totalRutas}
+										totalRecords={totalRutas-1}
 										pageLimit={1}
 										pageNeighbours={2}
 										onPageChanged={this.onPageChanged}
@@ -114,14 +115,8 @@ class MyRoute extends React.Component {
 											ruta={ruta}
 										/>
 									);
-								} else {
-									return (
-										<InfoRoute
-											key={index}
-											error={i18n.t("myRoutes.errorParsing")}
-											errorMore={i18n.t("myRoutes.errorParsingMore")}
-										/>
-									);
+								}else{
+									return 0;
 								}
 							})}
 						</FormRenderContainer>
@@ -136,11 +131,10 @@ class MyRoute extends React.Component {
 						<MyRouteContainer data-testid="myroute-container">
 							<FormRenderContainer id="empty">
 								<Header data-testid="myroute-header">
-									<h1 id="h1-empty">{i18n.t("myRoutes.title")}</h1>{" "}
+									<h1 id="h1-empty">{i18n.t("routList.tittle")}</h1>{" "}
 								</Header>
 								<h5 align="center">
-									{i18n.t("myRoutes.noRoutes")}
-									<a href={"#/newRoute"}> {i18n.t("myRoutes.here")}</a>
+									{i18n.t("routList.noRoutes")}
 								</h5>
 							</FormRenderContainer>
 						</MyRouteContainer>
