@@ -8,11 +8,17 @@ export const NavigationItems = [
     label: 'navBar.profile',
     to: '/viadeUO265431/profile'
   },
+   {
+    id:'friends',
+    icon:'img/icon/amigos.png',
+    label:'navBar.friends',
+    to: '/viadeUO265431/friends'
+  },
   {
-    id:'newRoute',
+    id:'addRoute',
     icon:'img/icon/addRoute.png',
     label:'navBar.addRoute',
-    to: '/viadeUO265431/newRoute'
+    to: '/viadeUO265431/addRoute'
   },
   {
     id:'uploadRoute',
@@ -20,26 +26,13 @@ export const NavigationItems = [
     label:'navBar.uploadRoute',
     to: '/viadeUO265431/uploadRoute'
   },
+
   {
-    id:'friends',
-    icon:'img/icon/amigos.png',
-    label:'navBar.friends',
-    to: '/viadeUO265431/friends'
-  },
-  {
-    id:'myRoutes',
+    id:'routList',
     icon:'img/icon/listRoute.png',
     label:'navBar.routList',
-    to:'/viadeUO265431/myRoutes'
-  },
-
-  {
-    id:'mapa',
-    icon:'img/icon/mapa.png',
-    label:'navBar.mapa',
-    to: '/viadeUO265431/mapa'
+    to:'/viadeUO265431/routList'
   }
-
 ];
 
 export const ProfileOptions = [

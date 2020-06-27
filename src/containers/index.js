@@ -3,12 +3,11 @@ import Register, { RegistrationSuccess } from './Register';
 import PageNotFound from './PageNotFound';
 import Welcome from './Welcome';
 import Profile from './Profile';
-import MyMapComponent from './Mapa';
 import { FormModelConverter, FormModelRenderer } from './FormModel';
 //import UploadRoute from './UploadRoute';
 import Friends from "./Friends";
-import MyRoutes from "./MyRoutes";
-import NewRoute from "./NewRoute";
+import RoutList from "./RoutList";
+import AddRoute from "./AddRoute";
 
 export {
   Login,
@@ -16,13 +15,11 @@ export {
   RegistrationSuccess,
   PageNotFound,
   Welcome,
-  Profile,
-  MyMapComponent,  
+  Profile, 
   FormModelConverter,
   FormModelRenderer,
   //UploadRoute,
   Friends,
-  MyRoutes,
-  NewRoute
-
+  RoutList,
+  AddRoute
 };

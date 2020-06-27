@@ -4,7 +4,8 @@ import update from "react-addons-update";
 
 const mapStyle = {
 	paddingBottom: "10px",
-	height: "100%"
+	height: "80%",
+	width: "75%"
 };
 
 var heatMap = [];

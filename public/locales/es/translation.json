@@ -12,7 +12,21 @@
     "find": "Busqueda por categoria...",
 	"author": "Autor",
 	"description": "Descripción",
+	"category": "Categoria"
+  },
+  "addRoute": {
+    "errorName": "El campo nombre esta vacio",
+    "errorDescription": "El campo descripción esta vacio",
+    "errorCategory": "El campo categoria esta vacio",
+	"errorPoints": "Se necesita insertar algun punto en el mapa",
+	"errorOnePoint": "Se necesitan al menos dos puntos en el mapa",
+	"successRoute": "Su ruta ha sido creada correctamente.",
+	"success": "Exito",
+	"tittle": "Añadir Ruta",
+	"name": "Nombre",
+	"description": "Descripción",
 	"category": "Categoria",
+	"btnSave": "Crear Ruta"
   },
   "notifications": {
     "success": "Éxito",

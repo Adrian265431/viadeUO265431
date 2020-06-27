@@ -8,7 +8,7 @@ import * as viadeManager from "../../utils/viadeManagerSolid";
 
 type Props = { webId: String };
 
-class MyRoute extends React.Component {
+class RoutList extends React.Component {
 	constructor({ webId }: Props) {
 		super();
 		this.state = {
@@ -114,4 +114,4 @@ class MyRoute extends React.Component {
 	}
 }
 
-export default MyRoute;
+export default RoutList;

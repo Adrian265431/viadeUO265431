@@ -1,6 +1,6 @@
 import React from "react";
 import { RouteCard } from "./myroutes.style";
-import { FormRenderContainer } from "../MyRoutes/infoRoute.style";
+import { FormRenderContainer } from "../RoutList/infoRoute.style";
 import RouteMap from "./RouteMap";
 import i18n from "i18n";
 

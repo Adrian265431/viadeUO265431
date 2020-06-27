@@ -3,7 +3,7 @@ import Map from "./Map";
 import { errorToaster, successToaster } from "@utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Header, RouteWrapper, TextArea, DivForms, LabelInput, TitleRoute, Button, RouteForm } from "./route.style";
+import { Section , H3, Div, TextArea, DivMax} from "./AddRoute.style";
 import { Route, Point } from "../../domain";
 import i18n from "i18n";
 import * as viadeManager from "../../utils/viadeManagerSolid";
@@ -12,7 +12,7 @@ type Props = {
 	webId: String
 };
 
-class NewRoute extends React.Component {
+class AddRoute extends React.Component {
 	constructor({ webId }: Props) {
 		super();
 		this.webID = webId;
@@ -46,15 +46,15 @@ class NewRoute extends React.Component {
 
 	async handleSave(event) {
 		if (this.title.current.value.length === 0) {
-			errorToaster(i18n.t("newRoute.errorTitle"), "ERROR");
+			errorToaster(i18n.t("addRoute.errorTitle"), "ERROR");
 		} else if (this.description.current.value.length === 0) {
-			errorToaster(i18n.t("newRoute.errorDescription"), "ERROR");
+			errorToaster(i18n.t("addRoute.errorDescription"), "ERROR");
 		} else if (this.categoria.current.value.length === 0) {
-			errorToaster(i18n.t("newRoute.errorCategoria"), "ERROR");
+			errorToaster(i18n.t("addRoute.errorCategory"), "ERROR");
 		} else if (this.state.markers === null || this.state.markers.length < 0) {
-			errorToaster(i18n.t("newRoute.errorPoints"), "ERROR");
+			errorToaster(i18n.t("addRoute.errorPoints"), "ERROR");
 		} else if (this.state.markers.length <2) {
-			errorToaster(i18n.t("newRoute.errorOnePoint"), "ERROR");
+			errorToaster(i18n.t("addRoute.errorOnePoint"), "ERROR");
 		} else {
 			const points = [];
 			for (let i = 0; i < this.state.markers.length; i++) {
@@ -73,27 +73,26 @@ class NewRoute extends React.Component {
 
 			let route = new Route(this.title.current.value, author, this.description.current.value, points, this.categoria.current.value);
 			await viadeManager.addRoute(route, this.webID);
-			successToaster(i18n.t("newRoute.successRoute"), i18n.t("newRoute.success"));
+			successToaster(i18n.t("addRoute.successRoute"), i18n.t("addRoute.success"));
 		}
 		event.persist();
 	}
 
 	render(): React.ReactNode {
 		return (
-			<RouteWrapper data-testid="route-component">
-				<Header data-testid="route-header">
-					<TitleRoute>{i18n.t("newRoute.title")}</TitleRoute>
-					<RouteForm id="routef">
-						<DivForms>
-							<LabelInput>
-								{i18n.t("newRoute.name")}{" "}
+			<Section data-testid="route-component">
+				<div data-testid="route-header">
+					<H3>{i18n.t("addRoute.title")}</H3>
+						<Div>
+							<label>
+								{i18n.t("addRoute.name")}{" "}
 								<input type="text" id="route_name" name="route_name" ref={this.title} />
-							</LabelInput>
-						</DivForms>
-						<DivForms>
-							<LabelInput>
+							</label>
+						</Div>
+						<Div>
+							<label>
 								{" "}
-								{i18n.t("newRoute.description")}{" "}
+								{i18n.t("addRoute.description")}{" "}
 								<TextArea
 									type="text"
 									id="description"
@@ -101,29 +100,28 @@ class NewRoute extends React.Component {
 									rows="10"
 									ref={this.description}
 								/>{" "}
-							</LabelInput>
-						</DivForms>
-						<DivForms>
-							<LabelInput>
-								{i18n.t("newRoute.categoria")}{" "}
+							</label>
+						</Div>
+						<Div>
+							<label>
+								{i18n.t("addRoute.category")}{" "}
 								<input type="text" id="route_categoria" name="route_categoria" ref={this.categoria} />
-							</LabelInput>
-						</DivForms>
-					</RouteForm>
-					<DivForms>
-						<hr />
-						<Button id="save_route" form="routef" type="submit" onClick={(e) => this.handleSubmit(e)}>
-							<FontAwesomeIcon icon="save" className="save-icon" title={i18n.t("newRoute.btnSave")} />
-							{"	" + i18n.t("newRoute.btnSave")}
-						</Button>
-					</DivForms>
-				</Header>
-	
-				<Map parentCallBack={this.callBackFunction} zoom={13} />
-
-			</RouteWrapper>
+							</label>
+						</Div>
+						<DivMax>
+						<button id="save_route" form="routef" type="submit" onClick={(e) => this.handleSubmit(e)}>
+							<FontAwesomeIcon icon="save" className="save-icon" title={i18n.t("addRoute.btnSave")} />
+							{"	" + i18n.t("addRoute.btnSave")}
+						</button>
+						</DivMax>
+				</div>
+				<div>
+					<Map parentCallBack={this.callBackFunction} />
+				</div>
+			</Section>
+				
 		);
 	}
 }
 
-export default NewRoute;
+export default AddRoute;

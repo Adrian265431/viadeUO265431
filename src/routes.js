@@ -3,7 +3,6 @@ import { PrivateLayout, PublicLayout, NotLoggedInLayout } from '@layouts';
 import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 import {
-  MyMapComponent,
   Login,
   Register,
   PageNotFound,
@@ -14,8 +13,8 @@ import {
   FormModelRenderer,
   //UploadRoute,
   Friends,
-  MyRoutes,
-  NewRoute
+  RoutList,
+  AddRoute
 } from './containers';
 
 const privateRoutes = [
@@ -28,11 +27,6 @@ const privateRoutes = [
     id: 'welcome',
     path: '/viadeUO265431/welcome',
     component: Welcome
-  },
-  {
-    id: 'Mapa',
-    path: '/viadeUO265431/mapa',
-    component: MyMapComponent
   },
   {
     id: 'profile',
@@ -50,9 +44,9 @@ const privateRoutes = [
     component: FormModelRenderer
   },
    {
-    id: 'newRoute',
-    path: '/viadeUO265431/newRoute',
-    component: NewRoute
+    id: 'addRoute',
+    path: '/viadeUO265431/addRoute',
+    component: AddRoute
   },
   //{
    // id: 'uploadRoute',
@@ -65,9 +59,9 @@ const privateRoutes = [
     component: Friends
   },
   {
-    id: 'myRoutes',
-    path: '/viadeUO265431/myRoutes',
-    component: MyRoutes
+    id: 'routList',
+    path: '/viadeUO265431/routList',
+    component: RoutList
   }
 ];
 
