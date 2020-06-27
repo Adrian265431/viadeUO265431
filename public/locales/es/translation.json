@@ -7,7 +7,7 @@
     }
   },
    "routList": {
-    "title": "Rutas del usuario",
+    "tittle": "Rutas del usuario",
     "noRoutes": "Actualmente no tiene ninguna ruta guardada.",
     "find": "Busqueda por categoria...",
 	"author": "Autor",
@@ -22,7 +22,7 @@
 	"errorOnePoint": "Se necesitan al menos dos puntos en el mapa",
 	"successRoute": "Su ruta ha sido creada correctamente.",
 	"success": "Exito",
-	"tittle": "Añadir Ruta",
+	"title": "Añadir Ruta",
 	"name": "Nombre",
 	"description": "Descripción",
 	"category": "Categoria",

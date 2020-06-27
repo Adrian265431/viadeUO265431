@@ -15,7 +15,7 @@ export const Section = styled.section`
 export const Div = styled.div`
 	align-items: center;
 	justify-content: center;
-	padding: 30px;
+	padding: 15px 30px;
 `;
 
 export const DivMax = styled.div`
