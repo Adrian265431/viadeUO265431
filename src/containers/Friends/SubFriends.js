@@ -1,11 +1,6 @@
 import React from "react";
-/*
-import data from "@solid/query-ldflex";
-import { useWebId } from "@inrupt/solid-react-components";
-import {NavBar} from "../../components";
-*/
 import {List } from '@solid/react';
-//import {Value} from '@solid/react';
+import i18n from "i18n";
 
 class SubFriendsComponent extends React.Component {
   
@@ -53,7 +48,7 @@ class SubFriendsComponent extends React.Component {
         const { expression } = this.state;
         return (
             <div>
-                <h3>Friends</h3>
+                <h3>{i18n.t("friends.tittle")}</h3>
                 <List src={expression}>{(item, i) =>
                     <li key={i}>{linkTo(`${item}`)}</li>}
                 </List>

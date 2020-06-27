@@ -6,6 +6,9 @@
       "href": "https://solidsdk.inrupt.net/public/general/es/app-permissions.html"
     }
   },
+   "friends": {
+    "tittle": "Amigos"
+  },
    "routList": {
     "tittle": "Rutas del usuario",
     "noRoutes": "Actualmente no tiene ninguna ruta guardada.",
@@ -14,6 +17,7 @@
 	"description": "Descripción",
 	"category": "Categoria"
   },
+  
   "addRoute": {
     "errorName": "El campo nombre esta vacio",
     "errorDescription": "El campo descripción esta vacio",
