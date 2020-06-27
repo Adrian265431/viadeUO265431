@@ -12,7 +12,7 @@ import {
   Profile,
   FormModelConverter,
   FormModelRenderer,
-  UploadRoute,
+  //UploadRoute,
   Friends,
   MyRoutes,
   NewRoute
