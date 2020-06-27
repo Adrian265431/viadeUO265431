@@ -22,7 +22,7 @@ const ProviderItem = ({ data, onSelect, radioName, id, checked }: Props) => (
     />
     <ProviderItemStyle htmlFor={id} className="provider-item">
       <div className="img-group">
-        <img src={data.image} alt={data.label} />
+        <img src={"viadeUO265431/"+data.image} alt={data.label} />
         <span className="label">{data.label}</span>
       </div>
       <FontAwesomeIcon icon="check" className="checked" />

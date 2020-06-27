@@ -74,7 +74,7 @@ class NavBarProfile extends Component<Props> {
   }
 
   // eslint-disable-next-line react/destructuring-assignment
-  profileRedirect = () => this.props.history.push('/viade_es4a/profile');
+  profileRedirect = () => this.props.history.push('/viadeUO265431/profile');
 
   // eslint-disable-next-line react/destructuring-assignment
   formModelRenderRedirect = () => this.props.history.push('/formModel/renderer');
