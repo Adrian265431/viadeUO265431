@@ -9,12 +9,6 @@ export const NavigationItems = [
     to: '/viadeUO265431/profile'
   },
   {
-    id:'addRoute',
-    icon:'img/icon/addRoute.png',
-    label:'navBar.addRoute',
-    to: '/viadeUO265431/addRoute'
-  },
-  {
     id:'newRoute',
     icon:'img/icon/addRoute.png',
     label:'navBar.addRoute',

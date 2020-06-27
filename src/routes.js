@@ -12,7 +12,6 @@ import {
   Profile,
   FormModelConverter,
   FormModelRenderer,
-  AddRoute,
   UploadRoute,
   Friends,
   MyRoutes,
@@ -49,11 +48,6 @@ const privateRoutes = [
     id: 'formmodelrenderer',
     path: '/formmodel/renderer',
     component: FormModelRenderer
-  },
-  {
-    id: 'addRoute',
-    path: '/viadeUO265431/addRoute',
-    component: AddRoute
   },
    {
     id: 'newRoute',

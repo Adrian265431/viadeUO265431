@@ -79,7 +79,7 @@ class MyRoute extends React.Component {
 					<MyRouteContainer data-testid="myroute-container">
 						<FormRenderContainer>
 							<Header data-testid="myroute-header">
-								<h1>{i18n.t("myRoutes.title")}</h1>
+								<h1>{i18n.t("routList.tittle")}</h1>
 								<input
 									type="text"
 									className="input"

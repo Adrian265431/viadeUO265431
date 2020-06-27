@@ -5,7 +5,6 @@ import Welcome from './Welcome';
 import Profile from './Profile';
 import MyMapComponent from './Mapa';
 import { FormModelConverter, FormModelRenderer } from './FormModel';
-import AddRoute from './AddRoute';
 //import UploadRoute from './UploadRoute';
 import Friends from "./Friends";
 import MyRoutes from "./MyRoutes";
@@ -20,8 +19,7 @@ export {
   Profile,
   MyMapComponent,  
   FormModelConverter,
-  FormModelRenderer,  
-  AddRoute,
+  FormModelRenderer,
   //UploadRoute,
   Friends,
   MyRoutes,
