@@ -9,7 +9,6 @@
   "routList": {
     "routList.tittle": "Rutas del usuario",
 	"routList.noRoutes": "Actualmente no tiene ninguna ruta guardada.",
-	
   },
   "notifications": {
     "success": "Éxito",
