@@ -9,7 +9,10 @@
    "routList": {
     "tittle": "Rutas del usuario",
     "noRoutes": "Actualmente no tiene ninguna ruta guardada.",
-    "find": "Busqueda por categoria..."
+    "find": "Busqueda por categoria...",
+	"author": "Autor",
+	"description": "Descripción",
+	"category": "Categoria",
   },
   "notifications": {
     "success": "Éxito",

@@ -1,8 +1,6 @@
 import { Map, GoogleApiWrapper, Marker, Polyline, HeatMap} from "google-maps-react";
-import * as Papa from "papaparse";
 import React from "react";
 import update from "react-addons-update";
-import axios from "axios";
 
 const mapStyle = {
 	paddingBottom: "10px",
@@ -12,7 +10,6 @@ const mapStyle = {
 var heatMap = [];
 
 var count = 0;
-var data = [];
 var dataActualizada = [];
 var gradient = [
 	"rgba(0, 255, 255, 0)",
@@ -55,42 +52,8 @@ export class MapContainer extends React.Component {
 		}
 	}
 
-	componentDidMount() {
-		this._asyncRequest = axios
-			.get("https://raw.githubusercontent.com/microsoft/Bing-COVID-19-Data/master/data/Bing-COVID19-Data.csv")
-			.then((response) => {
-				data = null;
-				this._asyncRequest = null;
-				var config = {
-					header: true
-				};
-				data = Papa.parse(response.data, config);
-				data = data.data;
-
-				var region = this.groupByArray(data, "AdminRegion2");
-
-				// eslint-disable-next-line
-				region.map((country = {}) => {
-					dataActualizada.push(country.values[country.values.length - 1]);
-				});
-				var region2 = this.groupByArray(data, "AdminRegion1");
-				// eslint-disable-next-line
-				region2.map((country = {}) => {
-					dataActualizada.push(country.values[country.values.length - 1]);
-				});
-				var pais = this.groupByArray(data, "Country_Region");
-				// eslint-disable-next-line
-				pais.map((country = {}) => {
-					dataActualizada.push(country.values[country.values.length - 1]);
-				});
-
-				this.iniciateMarkers();
-			});
-	}
-
 	componentWillUnmount() {
 		dataActualizada = [];
-		data = [];
 		heatMap = [];
 		count = 0;
 	}
@@ -266,6 +229,6 @@ export class MapContainer extends React.Component {
 }
 
 export default GoogleApiWrapper({
-	apiKey: "AIzaSyB3kcMOsEbg2unbt5yGvqw4HxNlSLE-U00",
+	apiKey: "",
 	libraries: [ "visualization" ]
 })(MapContainer);

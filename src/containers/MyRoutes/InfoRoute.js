@@ -13,11 +13,11 @@ const InfoRoute = (props) => {
 			
 				<div id={name}>
 					<h2>{name}</h2>
-					<h3> {i18n.t("myRoutes.createdBy")} </h3>
+					<h3> {i18n.t("routList.author")} </h3>
 					<p>{author}</p>
-					<h3> {i18n.t("myRoutes.description")}</h3>
+					<h3> {i18n.t("routList.description")}</h3>
 					<p>{description}</p>
-					<h3> {i18n.t("myRoutes.categoria")}</h3>
+					<h3> {i18n.t("routList.category")}</h3>
 					<p>{categoria}</p>
 					<br />
 					<FormRenderContainer id="mapa">

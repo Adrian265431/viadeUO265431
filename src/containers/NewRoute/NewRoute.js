@@ -27,7 +27,7 @@ class NewRoute extends React.Component {
 		};
 	}
 
-	state = { markers: {}, image: {} };
+	state = { markers: {} };
 
 	callBackFunction = (childData) => {
 		this.setState({ markers: childData });
@@ -74,9 +74,6 @@ class NewRoute extends React.Component {
 			let route = new Route(this.title.current.value, author, this.description.current.value, points, this.categoria.current.value);
 			await viadeManager.addRoute(route, this.webID);
 			successToaster(i18n.t("newRoute.successRoute"), i18n.t("newRoute.success"));
-			setTimeout(function() {
-				window.location.href = "myRoutes";
-			}, 1000);
 		}
 		event.persist();
 	}
