@@ -1,8 +1,6 @@
 import React from "react";
 import { Loader } from "@util-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Pagination from "../../components/Pagination";
-
 import { Header, RouteWrapper, MyRouteContainer, FormRenderContainer } from "./myroutes.style";
 import InfoRoute from "./InfoRoute";
 import i18n from "i18n";
@@ -16,22 +14,10 @@ class MyRoute extends React.Component {
 		this.state = {
 			data: null,
 			original: null,
-			currentData: [],
-			currentPage: null,
-			pageLimit: 2,
-			totalPages: null
 		};
 		this.handleChange = this.handleChange.bind(this);
 	}
-	onPageChanged = (data) => {
-		if (this.state.data !== null && this.state.data !== "EMPTY") {
-			const allRutas = this.state.data;
-			const { currentPage, totalPages, pageLimit } = data;
-			const offset = (currentPage - 1) * pageLimit;
-			const currentData = allRutas.slice(offset, offset + pageLimit);
-			this.setState({ currentPage, currentData, totalPages });
-		}
-	};
+	
 	componentDidMount() {
 		const { webId } = this.props;
 		this._asyncRequest = viadeManager.readRoutesFromPod(webId).then((data) => {
@@ -43,37 +29,27 @@ class MyRoute extends React.Component {
 		});
 	}
 
-	//Busqueda
+	//Busqueda, si hay algo escrito en ella, hace el filtrado, sino coge todas las rutas
 	handleChange(e) {
 		var currentList = [];
 		var newList = [];
-		if (e.target.value !== "") {
+		if (e.target.value !== "EMPTY") {
 			currentList = this.state.original;
-		
 			newList = currentList.filter((item) => {
 					const lc = item.categoria.toLowerCase();
 					const filter = e.target.value.toLowerCase();
 					return lc.includes(filter);
 			});
+			this.setState({
+				data: newList
+			});
 		} else {
 			newList = this.state.original;
-			this.setState({
-				totalPages: newList.length
-			});
-			this.onPageChanged(this.state);
 		}
-		this.setState({
-				data: newList,
-				totalPages: this.state.data.length,
-				currentPage:1
-			});
-		this.onPageChanged(this.state);
 	}
 
 	render(): React.ReactNode {
 		if (this.state.data !== null && this.state.data !== "EMPTY") {
-			const { data } = this.state;
-			const totalRutas = data.length;
 			return (
 				<RouteWrapper data-testid="route-component">
 					<MyRouteContainer data-testid="myroute-container">
@@ -87,17 +63,8 @@ class MyRoute extends React.Component {
 									placeholder="Busqueda por categoria..."
 								/>
 								<FontAwesomeIcon icon="search" className="search-icon" id="searchIcon" />
-								
-								<div className="d-flex flex-row py-4 align-items-center" id="pagination">
-									<Pagination
-										totalRecords={totalRutas-1}
-										pageLimit={1}
-										pageNeighbours={2}
-										onPageChanged={this.onPageChanged}
-									/>
-								</div>
 							</Header>
-							{this.state.currentData.map((ruta, index) => {
+							{this.state.data.map((ruta, index) => {
 								if (ruta.points.length > 0) {
 									return (
 										<InfoRoute

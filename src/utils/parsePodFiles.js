@@ -11,8 +11,6 @@ const N3 = require("n3");
 
 export const createRouteFromData = async (folder) => {
 	let routes = [];
-	while (routes.length < folder.length) {
-		routes = [];
 		for (const element of folder) {
 			let quadStream = await fc.readFile(element.url);
 			const turtleParser = new N3.Parser({ format: "Turtle" });
@@ -50,7 +48,7 @@ export const createRouteFromData = async (folder) => {
 					routes.push(ruta);
 				}
 			});
-		}
+		
 	}
 	return routes;
 };

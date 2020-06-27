@@ -7,7 +7,6 @@ import Footer from './Footer';
 import Notification from './Notifications';
 import AutoSaveSpinner from './AutoSaveSpinner';
 import Space from "./Space";
-import Pagination from "./Pagination";
 
 export {
   ErrorBoundary,
@@ -18,6 +17,5 @@ export {
   Footer,
   Notification,
   AutoSaveSpinner,
-  Space,
-Pagination
+  Space
 };
