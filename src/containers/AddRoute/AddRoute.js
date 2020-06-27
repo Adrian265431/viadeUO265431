@@ -19,7 +19,7 @@ class AddRoute extends React.Component {
 		this.handleSave = this.handleSave.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-		this.title = React.createRef();
+		this.name = React.createRef();
 		this.description = React.createRef();
 		this.categoria = React.createRef();
 		this.state = {
@@ -45,8 +45,8 @@ class AddRoute extends React.Component {
 	}
 
 	async handleSave(event) {
-		if (this.title.current.value.length === 0) {
-			errorToaster(i18n.t("addRoute.errorTitle"), "ERROR");
+		if (this.name.current.value.length === 0) {
+			errorToaster(i18n.t("addRoute.errorName"), "ERROR");
 		} else if (this.description.current.value.length === 0) {
 			errorToaster(i18n.t("addRoute.errorDescription"), "ERROR");
 		} else if (this.categoria.current.value.length === 0) {
@@ -71,7 +71,7 @@ class AddRoute extends React.Component {
 			author = author.replace(".solid.community/profile/card#me", "");
 			author = author.replace(".inrupt.net/profile/card#me", "");
 
-			let route = new Route(this.title.current.value, author, this.description.current.value, points, this.categoria.current.value);
+			let route = new Route(this.name.current.value, author, this.description.current.value, points, this.categoria.current.value);
 			await viadeManager.addRoute(route, this.webID);
 			successToaster(i18n.t("addRoute.successRoute"), i18n.t("addRoute.success"));
 		}
@@ -86,7 +86,7 @@ class AddRoute extends React.Component {
 						<Div>
 							<label>
 								{i18n.t("addRoute.name")}{" "}
-								<input type="text" id="route_name" name="route_name" ref={this.title} />
+								<input type="text" id="route_name" name="route_name" ref={this.name} />
 							</label>
 						</Div>
 						<Div>

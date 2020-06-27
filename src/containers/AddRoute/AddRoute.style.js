@@ -10,15 +10,12 @@ export const TextArea = styled.textarea`
 
 export const Section = styled.section`
 	display: flex;
-	#save_route{
-		margin-right:110px;
-	}
 `;
 
 export const Div = styled.div`
 	align-items: center;
 	justify-content: center;
-	padding: 15px;
+	padding: 30px;
 `;
 
 export const DivMax = styled.div`
