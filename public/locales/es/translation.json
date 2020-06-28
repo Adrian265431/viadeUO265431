@@ -17,7 +17,7 @@
     "errorFile": "El fichero no es compatible o esta mal formado",
 	"successRoute": "Su ruta ha sido creada correctamente.",
 	"success": "Exito",
-	"title": "Subir Ruta",
+	"tittle": "Subir Ruta",
 	"name": "Nombre",
 	"description": "Descripción",
 	"category": "Categoria",

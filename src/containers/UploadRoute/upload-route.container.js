@@ -125,6 +125,7 @@ const UploadRoute = ({ webId }: Props) => {
 				<DivMax>
 				<button data-testid="bt-save" id="butonSave" onClick={handleSave}>
 						<FontAwesomeIcon icon="save" className="save-icon" title={i18n.t("uploadRoute.btnSave")} />
+							{"	" + i18n.t("uploadRoute.btnSave")}
 				</button>
 				</DivMax>
 			</div>
