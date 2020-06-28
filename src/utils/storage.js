@@ -2,14 +2,11 @@ import data from "@solid/query-ldflex";
 import { AccessControlList } from "@inrupt/solid-react-components";
 import * as ldflexHelper from "./ldflex-helper";
 import * as permissionHelper from "./permissions";
-import { resourceExists, createDoc, createDocument } from "./ldflex-helper";
+import { resourceExists, createDoc } from "./ldflex-helper";
 import { errorToaster } from "@utils";
 import routeShape from "@contexts/route-shape.json";
 const routePath = process.env.REACT_APP_VIADE_ROUTES_PATH;
-const rawMediaPath = process.env.REACT_APP_VIADE_RAWMEDIA_PATH;
-const settingsPath = process.env.REACT_APP_VIADE_SETTINGS_PATH;
-const inboxPath = process.env.REACT_APP_VIADE_INBOX_PATH;
-const sharedPath = process.env.REACT_APP_VIADE_SHARED_PATH;
+
 
 const N3 = require("n3");
 const { DataFactory } = N3;
@@ -175,15 +172,6 @@ export const createInitialFiles = async (webId) => {
 
 		// Get the default app storage location from the user's pod and append our path to it
 		const routesUrl = await getAppStorage(webId, routePath);
-		const rawMediaUrl = await getAppStorage(webId, rawMediaPath);
-		const settingsUrl = await getAppStorage(webId, settingsPath);
-		const settingsInboxUrl = await getAppStorage(webId, inboxPath);
-		const sharedUrl = await getAppStorage(webId, sharedPath);
-
-		// Set up various paths relative to the viade URL
-		const dataFilePath = `${settingsUrl}data.ttl`;
-		const settingsFilePath = `${settingsUrl}settings.ttl`;
-		const settingsInboxFilePath = `${settingsInboxUrl}settings.ttl`;
 
 		// Check if the viade folder exists, if not then create it.
 		const routesFolderExists = await resourceExists(routesUrl);
@@ -194,54 +182,6 @@ export const createInitialFiles = async (webId) => {
 					"Content-Type": "text/turtle"
 				}
 			});
-		}
-		// Check if the viade folder exists, if not then create it.
-		const rawMediaFolderExists = await resourceExists(rawMediaUrl);
-		if (!rawMediaFolderExists) {
-			await createDoc(data, {
-				method: "PUT",
-				headers: {
-					"Content-Type": "text/turtle"
-				}
-			});
-		}
-
-		// Check if the viade folder exists, if not then create it.
-		const settingsFolderExists = await resourceExists(settingsUrl);
-		if (!settingsFolderExists) {
-			await createDoc(data, {
-				method: "PUT",
-				headers: {
-					"Content-Type": "text/turtle"
-				}
-			});
-		}
-
-		// Check if the viade folder exists, if not then create it.
-		const sharedFolderExists = await resourceExists(sharedUrl);
-		if (!sharedFolderExists) {
-			await createDoc(data, {
-				method: "PUT",
-				headers: {
-					"Content-Type": "text/turtle"
-				}
-			});
-		}
-		// Check if data file exists, if not then create it.
-		const dataFileExists = await resourceExists(dataFilePath);
-		if (!dataFileExists) {
-			await createDocument(dataFilePath);
-		}
-
-		// Check if the settings file exists, if not then create it.
-		const settingsFileExists = await resourceExists(settingsFilePath);
-		if (!settingsFileExists) {
-			await createDocument(settingsFilePath);
-		}
-
-		const settingsInboxFileExists = await resourceExists(settingsInboxFilePath);
-		if (!settingsInboxFileExists) {
-			await createDocument(settingsInboxFilePath);
 		}
 
 		return true;
