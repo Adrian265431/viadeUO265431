@@ -1,7 +1,7 @@
 import React from "react";
 import { Loader } from "@util-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Header, RouteWrapper, MyRouteContainer, FormRenderContainer } from "./myroutes.style";
+import { Header, Div, MyRouteContainer, FormRenderContainer } from "./myroutes.style";
 import InfoRoute from "./InfoRoute";
 import i18n from "i18n";
 import * as viadeManager from "../../utils/viadeManagerSolid";
@@ -51,7 +51,7 @@ class RoutList extends React.Component {
 	render(): React.ReactNode {
 		if (this.state.data !== null && this.state.data !== "EMPTY") {
 			return (
-				<RouteWrapper data-testid="route-component">
+				<Div data-testid="route-component">
 					<MyRouteContainer data-testid="myroute-container">
 						<FormRenderContainer>
 							<Header data-testid="myroute-header">
@@ -88,24 +88,24 @@ class RoutList extends React.Component {
 							})}
 						</FormRenderContainer>
 					</MyRouteContainer>
-				</RouteWrapper>
+				</Div>
 			);
 		}
 		if (this.state.data !== null) {
 			if (this.state.data === "EMPTY" || this.state.data.length <= 0) {
 				return (
-					<RouteWrapper data-testid="route-component">
+					<Div data-testid="route-component">
 						<MyRouteContainer data-testid="myroute-container">
 							<FormRenderContainer id="empty">
 								<Header data-testid="myroute-header">
-									<h1 id="h1-empty">{i18n.t("routList.tittle")}</h1>{" "}
+									<h1>{i18n.t("routList.tittle")}</h1>{" "}
 								</Header>
 								<h5 align="center">
 									{i18n.t("routList.noRoutes")}
 								</h5>
 							</FormRenderContainer>
 						</MyRouteContainer>
-					</RouteWrapper>
+					</Div>
 				);
 			}
 		} else {

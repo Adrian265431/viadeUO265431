@@ -1,17 +1,13 @@
 import React from "react";
-import { RouteCard } from "./myroutes.style";
-import { FormRenderContainer } from "../RoutList/infoRoute.style";
+import { DivInfo, FormRenderContainer } from "../RoutList/myroutes.style";
 import RouteMap from "./RouteMap";
 import i18n from "i18n";
 
 const InfoRoute = (props) => {
-	const { name, author, description, categoria, points, center, error, errorMore} = props;
-	
-	if (!error) {
+	const { name, author, description, categoria, points, center} = props;
+
 		return (
-			<RouteCard className="card" id="card">
-			
-				<div id={name}>
+			<DivInfo className="card" id="card">
 					<h2>{name}</h2>
 					<h3> {i18n.t("routList.author")} </h3>
 					<p>{author}</p>
@@ -24,17 +20,9 @@ const InfoRoute = (props) => {
 						<RouteMap markers={points} center={center} />
 					</FormRenderContainer>
 					<br />
-				</div>
-			</RouteCard>
+			</DivInfo>
 		);
-	} else {
-		return (
-			<RouteCard className="card">
-				<h5>{error}</h5>
-				<p> {errorMore} </p>
-			</RouteCard>
-		);
-	}
+		
 };
 
 export default InfoRoute;
