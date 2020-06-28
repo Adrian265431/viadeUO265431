@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/Adrian265431/viadeUO265431.svg?branch=master)](https://travis-ci.org/Adrian265431/viadeUO265431)
 [![codecov](https://codecov.io/gh/Adrian265431/viadeUO265431/branch/master/graph/badge.svg)](https://codecov.io/gh/Adrian265431/viadeUO265431)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2ab2a9322b4040d386f7cc5ad090b375)](https://app.codacy.com/manual/Adrian265431/viadeUO265431/dashboard)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/348ae21cbc454ec3ad9b17c83d7ae2d0)](https://app.codacy.com/manual/Adrian265431/viadeUO265431/dashboard)
 
 # VIADEUO265431
 
