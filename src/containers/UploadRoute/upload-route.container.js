@@ -1,39 +1,135 @@
-import React from "react";
-import auth from "solid-auth-client";
-import FC from 'solid-file-client';
-import {RouteAddDiv} from '../addRoute/addRoute.style';
-import Parser from "../addRoute/Parser";
+import React, { useState } from "react";
+import i18n from "i18n";
+import { Route } from "../../domain";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { errorToaster, successToaster } from "../../utils";
+import * as viadeManager from "../../utils/viadeManagerSolid";
+import { ParserFile } from "../../utils/parserFile";
+import { Section,DivMax,TextArea,Input} from "./uploadRoute.style";
 
-const UploadRoute = (props) => {
+type Props = {
+	webId: String
+};
 
-    const handleSubmit = async (e) => {
-        const fileReader = new FileReader();
-        fileReader.fileName=e.target.files[0].name;
-        const {webId} = props;
-        fileReader.onload = async (event) => {
-            const fc   = new FC( auth );
-            //const nombre=event.target.fileName;
-            var json = JSON.parse(event.target.result);
-            json=Parser(json.name,json.description);
-            const url=webId.split("profile/card#me")[0]+"public/"+new Date()+".json";
-            console.log(url);
-            await fc.createFile(url, json, "application/geo+json", {});
-            console.log("subido");
-        };
-        fileReader.readAsText(e.target.files[0]);
-    }
+const UploadRoute = ({ webId }: Props) => {
+	const webID = webId;
+	const [ name, setName ] = useState("");
+	const [ description, setDescription ] = useState("");
+	const [ category, setCategory ] = useState("");
+	const [ fileToParse, setFileToParse ] = useState("");
+	let file = React.createRef();
+	let points = [];
 
-    return (
-        <RouteAddDiv>
-            <h1>Subir ruta</h1>
-            <br/>
-            <label>
-                Upload file:
-            <input type="file" name="files[]" id="file" onChange={handleSubmit} />
-            </label>
-        </RouteAddDiv>
+	const parser = new ParserFile();
 
-    );
-}
+	function chooseParser(file) {
+		
+			try {
+				points = parser.parserGeoJSON(file);
+			} catch (error) {
+				
+			}
+		
+	}
+
+	function handleNameChange(event) {
+		event.preventDefault();
+		setName(event.target.value);
+	}
+	function handleDescriptionChange(event) {
+		event.preventDefault();
+		setDescription(event.target.value);
+	}
+	function handleCategoryChange(event) {
+		event.preventDefault();
+		setCategory(event.target.value);
+	}
+
+	function loaded(file) {
+		setFileToParse(file.target.result.toString());
+	}
+
+	function handleUpload(event) {
+		event.preventDefault();
+		if (file.current.files.length > 0) {
+			var reader = new FileReader();
+			reader.readAsText(file.current.files[0]);
+			reader.onload = loaded;
+		}
+	}
+
+	function handleSave(event) {
+		if (name.length === 0) {
+			errorToaster(i18n.t("uploadRoute.errorName"), "ERROR");
+		} else if (description.length === 0) {
+			errorToaster(i18n.t("uploadRoute.errorDescription"), "ERROR");
+		} else if (category.length === 0) {
+			errorToaster(i18n.t("uploadRoute.errorCategory"), "ERROR");
+		} else {
+			chooseParser(fileToParse);
+			if (fileToParse === "") {
+				errorToaster(i18n.t("uploadRoute.errorNoFile"), "ERROR");
+			} else {
+				if (points.length === 0) {
+					errorToaster(i18n.t("uploadRoute.errorFile"), "ERROR");
+				} else {
+					let author = webID.replace("https://", "");
+					author = author.replace(".solid.community/profile/card#me", "");
+					author = author.replace(".inrupt.net/profile/card#me", "");
+
+					let route = new Route(name, author, description, points, category);
+					viadeManager.addRoute(route, webID);
+					successToaster(i18n.t("uploadRoute.successRoute"), i18n.t("uploadRoute.success"));
+				}
+			}
+			event.preventDefault();
+		}
+	}
+	return (
+		<Section data-testid="route-wrapper">
+			<div>
+				<div data-testid="route-header">
+					<h1>{i18n.t("uploadRoute.tittle")}</h1>
+				</div>
+				<form>
+					<div>
+						<label>
+							{i18n.t("uploadRoute.name")}
+							<Input type="text" data-testid="route_name" onChange={handleNameChange} />
+						</label>
+						<label>
+							{i18n.t("uploadRoute.description")}
+							<TextArea
+								type="text"
+								data-testid="route_description"
+								name="description"
+								rows="5"
+								onChange={handleDescriptionChange}
+							/>
+						</label>
+					
+						<label>
+							{i18n.t("uploadRoute.category")}
+							<Input type="text" data-testid="route_name" onChange={handleCategoryChange} />
+						</label>
+					</div>
+
+					<div>
+						<label>
+							{i18n.t("uploadRoute.uploadFile")}
+							<Input type="file" ref={file} onChange={handleUpload} data-testid="file-input" />
+						</label>
+					</div>
+				</form>
+				<hr />
+				<DivMax>
+				<button data-testid="bt-save" id="butonSave" onClick={handleSave}>
+						<FontAwesomeIcon icon="save" className="save-icon" title={i18n.t("uploadRoute.btnSave")} />
+				</button>
+				</DivMax>
+			</div>
+		</Section>
+	);
+};
 
 export default UploadRoute;

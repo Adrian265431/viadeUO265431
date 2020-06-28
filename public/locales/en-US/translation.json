@@ -31,6 +31,21 @@
 	"category": "Category",
 	"btnSave": "Create Route"
   },
+  "uploadRoute": {
+    "errorName": "Name field is emptly",
+    "errorDescription": "Description field is emptly",
+    "errorCategory": "Category field is emptly",
+	"errorNoFile": "File field is emptly",
+    "errorFile": "The file isn`t compatible or it is bad formed",
+	"successRoute": "Your route has been created correctly.",
+	"success": "Success",
+	"title": "Add Route",
+	"name": "Name",
+	"description": "Description",
+	"category": "Category",
+	"btnSave": "Create Route"
+	"uploadFile": "File GeoJSON"
+  },
   "notifications": {
     "success": "Success",
     "error": "Error",

@@ -9,6 +9,21 @@
    "friends": {
     "tittle": "Amigos"
   },
+   "uploadRoute": {
+    "errorName": "El campo nombre esta vacio",
+    "errorDescription": "El campo descripción esta vacio",
+    "errorCategory": "El campo categoria esta vacio",
+	"errorNoFile": "No ha insertado ningun fichero",
+    "errorFile": "El fichero no es compatible o esta mal formado",
+	"successRoute": "Su ruta ha sido creada correctamente.",
+	"success": "Exito",
+	"title": "Subir Ruta",
+	"name": "Nombre",
+	"description": "Descripción",
+	"category": "Categoria",
+	"uploadFile": "Fichero GeoJSON",
+	"btnSave": "Crear Ruta"
+  },
    "routList": {
     "tittle": "Rutas del Usuario",
     "noRoutes": "Actualmente no tiene ninguna ruta guardada.",

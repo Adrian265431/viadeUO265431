@@ -4,7 +4,7 @@ import PageNotFound from './PageNotFound';
 import Welcome from './Welcome';
 import Profile from './Profile';
 import { FormModelConverter, FormModelRenderer } from './FormModel';
-//import UploadRoute from './UploadRoute';
+import UploadRoute from './UploadRoute';
 import Friends from "./Friends";
 import RoutList from "./RoutList";
 import AddRoute from "./AddRoute";
@@ -18,7 +18,7 @@ export {
   Profile, 
   FormModelConverter,
   FormModelRenderer,
-  //UploadRoute,
+  UploadRoute,
   Friends,
   RoutList,
   AddRoute
