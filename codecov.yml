@@ -3,3 +3,5 @@ ignore:
   - "src/serviceWorker.js"
   - "src/domain/point.js"
   - "src/domain/route.js"
+  - "src/containers/Profile"
+  - "src/containers/Register"
