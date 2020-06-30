@@ -3,7 +3,4 @@ ignore:
   - "src/serviceWorker.js"
   - "src/domain/point.js"
   - "src/domain/route.js"
-  - "src/containers/Register/register.container.js"
-  - "src/containers/Register/register.component.js"
-  - "src/containers/Register/RegistrationSuccess"
   
